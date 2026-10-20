@@ -73,19 +73,29 @@ def css_urls(css):
     return re.findall(r"""url\(\s*['"]?([^'")\s]+)['"]?\s*\)""", css)
 
 
-def resolve(root, current_url, reference):
-    target = urlsplit(urljoin(ORIGIN + current_url, reference))
-    if target.netloc and target.netloc != urlsplit(ORIGIN).netloc:
+def resolve(root, current_url, reference, base_url=ORIGIN + "/"):
+    base = urlsplit(base_url)
+    target = urlsplit(urljoin(urljoin(base_url, current_url), reference))
+    if target.netloc and target.netloc != base.netloc:
         return None, target
+    prefix = unquote(base.path).rstrip("/") + "/"
     path = unquote(target.path)
-    local = root / path.lstrip("/")
+    if path == prefix.rstrip("/"):
+        path = prefix
+    if not path.startswith(prefix):
+        raise ValueError(f"outside deployment path: {reference}")
+    local = root / path.removeprefix(prefix)
+    if not local.resolve().is_relative_to(root.resolve()):
+        raise ValueError(f"outside deployment path: {reference}")
     if path.endswith("/") or local.is_dir():
         local = local / "index.html"
     return local, target
 
 
-def validate(root, inventory=None, source_root=None):
+def validate(root, inventory=None, source_root=None, base_url=ORIGIN + "/"):
     root = Path(root).resolve()
+    base_url = base_url.rstrip("/") + "/"
+    prefix = urlsplit(base_url).path
     errors = []
     html_files = sorted(root.rglob("*.html"))
     if not html_files:
@@ -93,7 +103,7 @@ def validate(root, inventory=None, source_root=None):
     parsed = {path: Page(path.read_text()) for path in html_files}
     for path, page in parsed.items():
         relative = "/" + path.relative_to(root).as_posix()
-        current = relative.removesuffix("index.html")
+        current = prefix + relative.lstrip("/").removesuffix("index.html")
         errors.extend(f"{relative}: {issue}" for issue in page.issues)
         if page.lang != "fr":
             errors.append(f"{relative}: expected French document language")
@@ -108,7 +118,11 @@ def validate(root, inventory=None, source_root=None):
                 continue
             if any(target.netloc == host or target.netloc.endswith("." + host) for host in PLATFORM_HOSTS):
                 errors.append(f"{relative}: platform dependency: {reference}")
-            local, target = resolve(root, current, reference)
+            try:
+                local, target = resolve(root, current, reference, base_url)
+            except ValueError as error:
+                errors.append(f"{relative}: {error}")
+                continue
             if local is None:
                 if runtime:
                     errors.append(f"{relative}: remote runtime dependency: {reference}")
@@ -123,12 +137,16 @@ def validate(root, inventory=None, source_root=None):
         if "@import" in css:
             errors.append(f"{relative}: unexpected CSS import")
         for reference in css_urls(css):
-            local, _ = resolve(root, relative, reference)
+            try:
+                local, _ = resolve(root, prefix + relative.lstrip("/"), reference, base_url)
+            except ValueError as error:
+                errors.append(f"{relative}: CSS asset {error}")
+                continue
             if local is None or not local.is_relative_to(root) or not local.is_file():
                 errors.append(f"{relative}: missing or remote CSS asset: {reference}")
     if inventory:
         for route in [p["route"] for p in inventory["pages"]] + NOTICE_ROUTES:
-            local, _ = resolve(root, "/", route)
+            local, _ = resolve(root, prefix, prefix + route.lstrip("/"), base_url)
             if not local.is_file():
                 errors.append(f"missing migrated route: {route}")
         for asset in inventory["assets"]:
@@ -140,12 +158,21 @@ def validate(root, inventory=None, source_root=None):
             if source_root and not (Path(source_root) / asset["local"].lstrip("/")).is_file():
                 errors.append(f"missing repository asset: {asset['local']}")
         for page in inventory["pages"]:
-            local, _ = resolve(root, "/", page["route"])
+            current = prefix + page["route"].lstrip("/")
+            local, _ = resolve(root, prefix, current, base_url)
             if local not in parsed:
                 continue
-            refs = {unquote(urlsplit(ref).path) for ref, _ in parsed[local].references}
+            refs = set()
+            for reference, _ in parsed[local].references:
+                try:
+                    target, _ = resolve(root, current, reference, base_url)
+                except ValueError:
+                    # Invalid deployment paths were reported in the page checks above.
+                    continue
+                if target is not None:
+                    refs.add(target)
             for image in page["images"]:
-                if image not in refs:
+                if root / image.lstrip("/") not in refs:
                     errors.append(f"{page['route']}: omitted source image: {image}")
         cname = root / "CNAME"
         if not cname.is_file() or cname.read_text().strip() != "www.pirogue2000.fr":
@@ -165,9 +192,13 @@ def validate(root, inventory=None, source_root=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", nargs="?", default="public")
+    parser.add_argument("--base-url", default=ORIGIN + "/", help="deployment URL, including any project path")
     args = parser.parse_args()
+    base = urlsplit(args.base_url)
+    if base.scheme not in ("https", "http") or not base.netloc or base.query or base.fragment:
+        parser.error("--base-url must be an absolute HTTP(S) URL without a query or fragment")
     inventory = json.loads(Path("docs/source-inventory.json").read_text())
-    errors = validate(Path(args.directory), inventory, Path("static"))
+    errors = validate(Path(args.directory), inventory, Path("static"), args.base_url)
     if errors:
         for error in errors:
             print(f"ERROR: {error}")

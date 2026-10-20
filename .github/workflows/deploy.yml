@@ -21,6 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Configure Pages
+        id: pages
         uses: actions/configure-pages@v5
       - name: Install pinned Hugo
         shell: bash
@@ -40,11 +41,15 @@ jobs:
           tar -xzf "$archive" -C "$RUNNER_TEMP/hugo-bin" hugo
           echo "$RUNNER_TEMP/hugo-bin" >> "$GITHUB_PATH"
       - name: Build
-        run: hugo --gc --minify --cleanDestinationDir --panicOnWarning
+        env:
+          HUGO_BASEURL: ${{ steps.pages.outputs.base_url }}
+        run: hugo --gc --minify --cleanDestinationDir --panicOnWarning --baseURL "$HUGO_BASEURL"
       - name: Check generated site
+        env:
+          HUGO_BASEURL: ${{ steps.pages.outputs.base_url }}
         run: |
           python3 -m unittest discover -s tests
-          python3 scripts/check_site.py
+          python3 scripts/check_site.py --base-url "$HUGO_BASEURL"
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

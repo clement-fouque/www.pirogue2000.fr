@@ -71,14 +71,23 @@ hugo server
 
 Les templates sont dans `layouts/`, le CSS dans `static/css/site.css` et le JavaScript dans `static/js/site.js`. Les polices sont locales et leurs licences sont dans `static/fonts/`.
 
-Le contrôle vérifie les routes migrées, les liens et ancres internes, les images, les PDF, l’absence de dépendances Jimdo et de ressources distantes chargées à l’exécution. Le manifeste `docs/source-inventory.json` est une référence de migration, **pas une base de contenu à mettre à jour à chaque ajout**. Conserver les médias historiques référencés ; si un retrait délibéré est nécessaire, adapter le manifeste dans la même modification, en expliquant pourquoi.
+Le contrôle vérifie les routes migrées, les liens et ancres internes, les images, les PDF, l’absence de dépendances Jimdo et de ressources distantes chargées à l’exécution. Les tests construisent aussi le site avec et sans sous-chemin lorsque `hugo` est disponible dans le `PATH`. Le manifeste `docs/source-inventory.json` est une référence de migration, **pas une base de contenu à mettre à jour à chaque ajout**. Conserver les médias historiques référencés ; si un retrait délibéré est nécessaire, adapter le manifeste dans la même modification, en expliquant pourquoi.
+
+Pour vérifier une publication sous le chemin du dépôt GitHub Pages :
+
+```sh
+hugo --gc --minify --cleanDestinationDir --panicOnWarning --baseURL "https://clement-fouque.github.io/www.pirogue2000.fr/"
+python3 scripts/check_site.py --base-url "https://clement-fouque.github.io/www.pirogue2000.fr/"
+```
+
+Le build et son contrôle doivent recevoir la même URL de base. Le contrôle refuse les liens et ressources internes qui sortent du sous-chemin de publication. Les chemins Markdown comme `/images/photo.jpg` ou `/contact/` restent inchangés dans les sources : les templates les adaptent au sous-chemin lors de la construction.
 
 ## Préparer GitHub Pages
 
-Le workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) installe Hugo à la version épinglée, vérifie son archive, construit le site, exécute les contrôles, puis téléverse uniquement `public/`. Le job `deploy`, dépendant du succès du job `build`, utilise l’environnement `github-pages`. Une exécution manuelle sur une branche autre que `main` ne publie pas.
+Le workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) installe Hugo à la version épinglée, vérifie son archive, construit le site, exécute les contrôles, puis téléverse uniquement `public/`. L’URL de base fournie par `actions/configure-pages` est transmise à Hugo et au contrôle : elle inclut le sous-chemin du dépôt pour une publication sur `github.io`, ou le domaine personnalisé lorsqu’il est configuré dans Pages. Le job `deploy`, dépendant du succès du job `build`, utilise l’environnement `github-pages`. Une exécution manuelle sur une branche autre que `main` ne publie pas.
 
 Le propriétaire du dépôt doit configurer **Settings → Pages → Build and deployment → Source: GitHub Actions**, ainsi que les éventuelles autorisations de l’environnement `github-pages`. Le workflow doit pouvoir disposer de `contents: read`, `pages: write` et `id-token: write`.
 
-Le domaine est préparé dans `hugo.toml` et `static/CNAME`. **La présence de ce fichier ne prouve ni l’activation du domaine dans GitHub Pages ni une bascule DNS.** Le propriétaire configure lui-même le domaine personnalisé, sa vérification, les DNS et HTTPS dans GitHub Pages. Attendre la validation de la publication et du domaine avant toute résiliation Jimdo.
+Le domaine est préparé dans `hugo.toml` et `static/CNAME` ; il reste la valeur par défaut des builds locaux sans `--baseURL`. **La présence de ce fichier ne prouve ni l’activation du domaine dans GitHub Pages ni une bascule DNS.** Le propriétaire configure lui-même le domaine personnalisé, sa vérification, les DNS et HTTPS dans GitHub Pages. Attendre la validation de la publication et du domaine avant toute résiliation Jimdo.
 
 Les mentions légales restent à compléter et valider par l’association. Les limites connues, l’inventaire et les différences avec Jimdo sont détaillés dans [`docs/migration.md`](docs/migration.md).
