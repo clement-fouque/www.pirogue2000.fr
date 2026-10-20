@@ -1,0 +1,65 @@
+baseURL = "https://www.pirogue2000.fr/"
+locale = "fr-FR"
+defaultContentLanguage = "fr"
+title = "Pirogue 2000"
+disableKinds = ["taxonomy", "term", "RSS"]
+enableRobotsTXT = true
+removePathAccents = false
+
+[[module.mounts]]
+  source = "static/images"
+  target = "assets/images"
+
+[params]
+  description = "Association humanitaire au Niger, basée à Saint Jean Le Blanc : santé, éducation et autosuffisance alimentaire."
+  facebook = "https://www.facebook.com/Pirogue-2000-169613653654704/"
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[markup.goldmark.renderHooks.image]
+  useEmbedded = "never"
+
+[markup.goldmark.renderHooks.link]
+  useEmbedded = "never"
+
+[[menus.main]]
+  name = "Accueil"
+  pageRef = "/"
+  weight = 10
+[[menus.main]]
+  identifier = "actions"
+  name = "Actions"
+  pageRef = "/actions"
+  weight = 20
+[[menus.main]]
+  name = "Santé"
+  pageRef = "/actions/santé"
+  parent = "actions"
+  weight = 21
+[[menus.main]]
+  name = "Education"
+  pageRef = "/actions/education"
+  parent = "actions"
+  weight = 22
+[[menus.main]]
+  name = "Développement"
+  pageRef = "/actions/développement"
+  parent = "actions"
+  weight = 23
+[[menus.main]]
+  name = "Activités"
+  pageRef = "/activités"
+  weight = 30
+[[menus.main]]
+  name = "Partenaires"
+  pageRef = "/partenaires"
+  weight = 40
+[[menus.main]]
+  name = "Calendrier"
+  pageRef = "/calendrier"
+  weight = 50
+[[menus.main]]
+  name = "Contact"
+  pageRef = "/contact"
+  weight = 60
