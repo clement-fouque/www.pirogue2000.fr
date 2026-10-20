@@ -11,7 +11,7 @@ les conditions de vie de la population nigérienne.**
 
 1. Votre adhésion vous permettra d'avoir accès au détail et au suivi de tous nos projets. Pour cela, il suffit d'imprimer le document via le lien suivant :
 
-   Le lien vers le bulletin d’adhésion n’était pas disponible sur le site au moment de la migration. Pour obtenir ce document, écrivez à [pirogue2000@yahoo.fr](mailto:pirogue2000@yahoo.fr).
+   Le lien vers le bulletin d’adhésion n’était pas disponible sur le site. Pour obtenir ce document, écrivez à [pirogue2000@yahoo.fr](mailto:pirogue2000@yahoo.fr).
 
 2. le remplir et l'envoyer, accompagné du règlement correspondant, à l'adresse suivante :
 
