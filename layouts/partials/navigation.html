@@ -1,0 +1,24 @@
+<nav class="site-navigation" aria-label="Navigation principale">
+  <div class="navigation-inner">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-items" hidden>
+      Menu <span aria-hidden="true">☰</span>
+    </button>
+    <ul id="navigation-items" class="navigation-items">
+      {{ range site.Menus.main }}
+      {{ $current := $.IsMenuCurrent .Menu . }}
+      {{ $ancestor := $.HasMenuCurrent .Menu . }}
+      <li class="navigation-item{{ if .Children }} has-children{{ end }}">
+        <a href="{{ .URL }}"{{ if $current }} aria-current="page"{{ else if $ancestor }} class="is-ancestor"{{ end }}>{{ .Name }}</a>
+        {{ with .Children }}
+        <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="actions-submenu" aria-label="Afficher les domaines d’action" hidden>+</button>
+        <ul class="submenu" id="actions-submenu">
+          {{ range . }}
+          <li><a href="{{ .URL }}"{{ if $.IsMenuCurrent .Menu . }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</nav>

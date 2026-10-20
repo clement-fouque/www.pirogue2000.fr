@@ -1,0 +1,27 @@
+{{- $src := .Destination -}}
+{{- $alt := .PlainText -}}
+{{- $dimensions := false -}}
+{{- $preview := $src -}}
+{{- $srcset := slice -}}
+{{- if and (strings.HasPrefix $src "/") (not (strings.HasPrefix $src "//")) -}}
+  {{- $path := printf "static%s" $src -}}
+  {{- if os.FileExists $path -}}
+    {{- $dimensions = imageConfig $path -}}
+  {{- end -}}
+  {{- with resources.Get (strings.TrimPrefix "/" $src) -}}
+    {{- $image := . -}}
+    {{- if gt .Width 640 -}}
+      {{- $preview = (.Resize "640x webp q82").RelPermalink -}}
+    {{- end -}}
+    {{- range slice 320 640 1040 1600 -}}
+      {{- if gt $image.Width . -}}
+        {{- $resized := $image.Resize (printf "%dx webp q82" .) -}}
+        {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink .) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if le $image.Width 1600 -}}
+      {{- $srcset = $srcset | append (printf "%s %dw" $src $image.Width) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<span class="markdown-image"><a class="image-link" href="{{ $src | safeURL }}" data-lightbox aria-label="Agrandir l’image{{ with $alt }} : {{ . }}{{ end }}"><img src="{{ $preview | safeURL }}"{{ with $srcset }} srcset="{{ delimit . ", " }}" sizes="(max-width: 800px) calc(100vw - 48px), (max-width: 1100px) 46vw, 520px"{{ end }} alt="{{ $alt }}" loading="lazy" decoding="async"{{ with $dimensions }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}{{ with .Title }} title="{{ . }}"{{ end }}></a>{{ with .Title }}<span class="image-caption">{{ . }}</span>{{ end }}</span>

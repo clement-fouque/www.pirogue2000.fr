@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ site.Title }}{{ if .IsHome }} · Association humanitaire au Niger{{ end }}</title>
+  <meta name="description" content="{{ .Description | default site.Params.description }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:description" content="{{ .Description | default site.Params.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:image" content="{{ "images/background.png" | absURL }}">
+  <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+  <link rel="preload" href="{{ "fonts/ArchivoBlack-Regular.ttf" | relURL }}" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="{{ "fonts/Imprima-Regular.ttf" | relURL }}" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
+  <script src="{{ "js/site.js" | relURL }}" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  {{ partial "navigation.html" . }}
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-title" href="{{ site.Home.RelPermalink }}">Pirogue 2000</a>
+      <a class="site-logo" href="{{ site.Home.RelPermalink }}" aria-label="Pirogue 2000 — accueil">
+        <img src="{{ "images/i757e1fc5319f5049.jpg" | relURL }}" width="160" height="160" alt="Logo Pirogue 2000">
+      </a>
+    </div>
+  </header>
+  <main id="contenu" class="main-content" tabindex="-1">
+    {{ block "main" . }}{{ partial "content.html" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+  <dialog class="lightbox" aria-label="Image agrandie">
+    <button class="lightbox-close" type="button" aria-label="Fermer l’image agrandie">Fermer <span aria-hidden="true">×</span></button>
+    <figure>
+      <figcaption></figcaption>
+    </figure>
+    <a class="lightbox-original">Ouvrir l’image originale</a>
+  </dialog>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<article class="page-content {{ with .Params.page_class }}page-content--{{ . }}{{ end }}">
+  {{ if eq .Section "actions" }}
+  <nav class="breadcrumb" aria-label="Fil d’Ariane">
+    <a href="{{ "actions/" | relURL }}">Actions</a>
+    {{ if not .IsSection }}<span aria-hidden="true">/</span><span aria-current="page">{{ .Title }}</span>{{ end }}
+  </nav>
+  {{ end }}
+  <h1>{{ .Title }}</h1>
+  <div class="prose">
+    {{ if eq .Params.page_class "activities" }}
+      {{ range $index, $section := split .Content "<hr>" }}
+        {{ if eq $index 0 }}
+          {{ $section | safeHTML }}
+        {{ else }}
+          <div class="activity-row{{ if eq (mod $index 2) 0 }} activity-row--reverse{{ end }}">{{ $section | safeHTML }}</div>
+        {{ end }}
+      {{ end }}
+    {{ else }}
+      {{ .Content }}
+    {{ end }}
+  </div>
+  {{ if and .IsSection (eq .Section "actions") }}
+  <nav class="action-links" aria-label="Nos domaines d’action">
+    {{ range (index site.Menus.main 1).Children }}
+    <a href="{{ .URL }}">{{ .Name }} <span aria-hidden="true">→</span></a>
+    {{ end }}
+  </nav>
+  {{ end }}
+</article>

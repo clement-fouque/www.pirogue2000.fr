@@ -1,0 +1,494 @@
+{
+  "source": "https://www.pirogue2000.fr",
+  "captured": "2026-10-20",
+  "pages": [
+    {
+      "source": "https://www.pirogue2000.fr/",
+      "route": "/",
+      "content": "content/_index.md",
+      "images": [
+        "/images/i77db7029a535daeb.jpg",
+        "/images/i5c7a2d05002e635f.png",
+        "/images/ia3295d396b687b59.png"
+      ]
+    },
+    {
+      "source": "https://www.pirogue2000.fr/actions/",
+      "route": "/actions/",
+      "content": "content/actions/_index.md",
+      "images": []
+    },
+    {
+      "source": "https://www.pirogue2000.fr/actions/santé/",
+      "route": "/actions/santé/",
+      "content": "content/actions/santé.md",
+      "images": [
+        "/images/i39fa79f39d2c2d8c.png",
+        "/images/i62946fa869a2b062.jpg",
+        "/images/i4bd8dcf984b52107.jpg",
+        "/images/i4be54f48cbacf72e.png",
+        "/images/i77db7029a535daeb.jpg",
+        "/images/i23151f77107e1e69.jpg",
+        "/images/i56c792eefc80db3c.jpg",
+        "/images/i49a44e4543bbe4ba.jpg"
+      ]
+    },
+    {
+      "source": "https://www.pirogue2000.fr/actions/education/",
+      "route": "/actions/education/",
+      "content": "content/actions/education.md",
+      "images": [
+        "/images/i5fb38c2f69a3afc3.jpg",
+        "/images/ib933255c90387d5d.jpg",
+        "/images/i8392c4d046126bce.jpg",
+        "/images/i4d2c0032cbb5bc6a.jpg",
+        "/images/id1e541a875bff4ff.jpg",
+        "/images/i94a6cf4121fa0390.jpg",
+        "/images/i03abec7e7f313369.jpg",
+        "/images/i94a6cf4121fa0390.jpg",
+        "/images/i1cabe1f722b1ee6f.jpg",
+        "/images/i099501fd4b4159f5.jpg"
+      ]
+    },
+    {
+      "source": "https://www.pirogue2000.fr/actions/développement/",
+      "route": "/actions/développement/",
+      "content": "content/actions/développement.md",
+      "images": [
+        "/images/i1e996a361006f943.jpg",
+        "/images/i773b030b43a85315.jpg",
+        "/images/i5c36e558aec52176.jpg",
+        "/images/if1ca0a48ea35ed71.jpg",
+        "/images/i3c1f71521be07a01.jpg",
+        "/images/if981d3582abe757d.jpg",
+        "/images/ie4f59c1b64dc074d.jpg",
+        "/images/ib8b74ec73ac2daa0.jpg"
+      ]
+    },
+    {
+      "source": "https://www.pirogue2000.fr/activités/",
+      "route": "/activités/",
+      "content": "content/activités.md",
+      "images": [
+        "/images/i97a254c1ed23024a.jpg",
+        "/images/idfe72728de6a9d8a.jpg",
+        "/images/i69b23818277c23ff.jpg",
+        "/images/i49c19c298d4675c3.jpg",
+        "/images/id24ce1e22aee00c3.jpg",
+        "/images/i8610ecbe09faea77.jpg",
+        "/images/ie0b3943952eac32e.jpg",
+        "/images/i19bd8a37d179003a.jpg",
+        "/images/ib0b5c9b157d92f5d.jpg",
+        "/images/ib6fe5e4d2c3f1d10.jpg",
+        "/images/i1821804f47cbb8b9.jpg",
+        "/images/i05e11dfe9e4b5957.jpg",
+        "/images/i90747fe57b8d3ae4.jpg"
+      ]
+    },
+    {
+      "source": "https://www.pirogue2000.fr/partenaires/",
+      "route": "/partenaires/",
+      "content": "content/partenaires.md",
+      "images": []
+    },
+    {
+      "source": "https://www.pirogue2000.fr/calendrier/",
+      "route": "/calendrier/",
+      "content": "content/calendrier.md",
+      "images": []
+    },
+    {
+      "source": "https://www.pirogue2000.fr/contact/",
+      "route": "/contact/",
+      "content": "content/contact.md",
+      "images": [
+        "/images/i757e1fc5319f5049.jpg"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i77db7029a535daeb/version/1522066926/produit-pour-vivre.jpg",
+      "local": "/images/i77db7029a535daeb.jpg",
+      "kind": "image",
+      "bytes": 89776,
+      "sha256": "c10e37413d93e36e3c3fbf45c5a1f6dd78538acc07fe652fc4c58e33c735be46"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i5c7a2d05002e635f/version/1522057131/image.png",
+      "local": "/images/i5c7a2d05002e635f.png",
+      "kind": "image",
+      "bytes": 887752,
+      "sha256": "0c316bac5f0f6ffd4eaf4981684403c0badb41dbce48e3e74fd3ba5231ed383f"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/ia3295d396b687b59/version/1522055501/image.png",
+      "local": "/images/ia3295d396b687b59.png",
+      "kind": "image",
+      "bytes": 514782,
+      "sha256": "5ad9e76a3365d61f5d9f142947e037c7af1f532e6f248331793facd84d4371eb"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i39fa79f39d2c2d8c/version/1522071623/image.png",
+      "local": "/images/i39fa79f39d2c2d8c.png",
+      "kind": "image",
+      "bytes": 476187,
+      "sha256": "0d32b3899818c04fb9a61e767b7bad90b6474fe85c39238043eb848c379808f5"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i62946fa869a2b062/version/1522071756/image.jpg",
+      "local": "/images/i62946fa869a2b062.jpg",
+      "kind": "image",
+      "bytes": 65983,
+      "sha256": "a3b2af831609bb5a69b991465e382effa2f324c2eddbfb81e8a1158fed0ff323"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i4bd8dcf984b52107/version/1522071756/image.jpg",
+      "local": "/images/i4bd8dcf984b52107.jpg",
+      "kind": "image",
+      "bytes": 82695,
+      "sha256": "f7c3c7f002ae88f3a32e3398e64dbac19c0fdcd15c01aaf2ced55d9873774d07"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i4be54f48cbacf72e/version/1522071756/image.png",
+      "local": "/images/i4be54f48cbacf72e.png",
+      "kind": "image",
+      "bytes": 475226,
+      "sha256": "13622d3fe4968af52b627d82055a5df3b2c70c976f516fec0e73550a5d93416b"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/icfdba701640b6fd6/version/1522071756/image.jpg",
+      "local": "/images/i77db7029a535daeb.jpg",
+      "kind": "image",
+      "bytes": 89776,
+      "sha256": "c10e37413d93e36e3c3fbf45c5a1f6dd78538acc07fe652fc4c58e33c735be46"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i23151f77107e1e69/version/1522071756/image.jpg",
+      "local": "/images/i23151f77107e1e69.jpg",
+      "kind": "image",
+      "bytes": 32768,
+      "sha256": "88d21d6130a630d7b06ad0dbf22de73b08ab2e2c2ec7946c3f9771282743da87"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i56c792eefc80db3c/version/1522071756/image.jpg",
+      "local": "/images/i56c792eefc80db3c.jpg",
+      "kind": "image",
+      "bytes": 81527,
+      "sha256": "d0272f6ba1699cc6860aa7a118cbe52ac21b0643b7851cb22dae4f495f58153b"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i49a44e4543bbe4ba/version/1522415481/image.jpg",
+      "local": "/images/i49a44e4543bbe4ba.jpg",
+      "kind": "image",
+      "bytes": 55767,
+      "sha256": "dd6ceddb5cffe8e9ea9cc43ee9dfda4a1af82efcb222396f34a25ad83e41942f"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i5fb38c2f69a3afc3/version/1708533289/image.jpg",
+      "local": "/images/i5fb38c2f69a3afc3.jpg",
+      "kind": "image",
+      "bytes": 8380203,
+      "sha256": "c969c71de03d7f4c0c61ac6f542db97d9b1343bcf90ef83acf2926f82689468c"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/ib933255c90387d5d/version/1708533289/image.jpg",
+      "local": "/images/ib933255c90387d5d.jpg",
+      "kind": "image",
+      "bytes": 8176585,
+      "sha256": "19b4c01deee86041ee52389c4077bee2e7aa508274d5d1f47d14f0d6cf84a171"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i8392c4d046126bce/version/1708533290/image.jpg",
+      "local": "/images/i8392c4d046126bce.jpg",
+      "kind": "image",
+      "bytes": 8737539,
+      "sha256": "d8aace68f8fb9ef71b52599a4b496f99cbf9ce746e56a2a88683f270d153e6a7"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i4d2c0032cbb5bc6a/version/1708533290/image.jpg",
+      "local": "/images/i4d2c0032cbb5bc6a.jpg",
+      "kind": "image",
+      "bytes": 8849106,
+      "sha256": "956bd72031dedf427923b27984ba1a69505531e5ce3c1a335317a54c8f3286a7"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/id1e541a875bff4ff/version/1708533290/image.jpg",
+      "local": "/images/id1e541a875bff4ff.jpg",
+      "kind": "image",
+      "bytes": 7938432,
+      "sha256": "6272cd06b16f5e8cb41672111276def7f34b2530906e6d528b923ee03da79a1e"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i94a6cf4121fa0390/version/1708533290/image.jpg",
+      "local": "/images/i94a6cf4121fa0390.jpg",
+      "kind": "image",
+      "bytes": 2072385,
+      "sha256": "5bb32019ef70bae802d46ad10ec9ca761564cab7fe01da66bd8ad90648c7c623"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i03abec7e7f313369/version/1708533290/image.jpg",
+      "local": "/images/i03abec7e7f313369.jpg",
+      "kind": "image",
+      "bytes": 126185,
+      "sha256": "602d652df971fe592c570753b61a3f1237cb4527bd84627da338ee2dc19833ec"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i75de46b2b90ba4e5/version/1708533291/image.jpg",
+      "local": "/images/i94a6cf4121fa0390.jpg",
+      "kind": "image",
+      "bytes": 2072385,
+      "sha256": "5bb32019ef70bae802d46ad10ec9ca761564cab7fe01da66bd8ad90648c7c623"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i1cabe1f722b1ee6f/version/1708533291/image.jpg",
+      "local": "/images/i1cabe1f722b1ee6f.jpg",
+      "kind": "image",
+      "bytes": 101133,
+      "sha256": "337d11850db8d39ff33b452194833eb76288dba8b9686e520c201ef4a1ae6a39"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i099501fd4b4159f5/version/1708533291/image.jpg",
+      "local": "/images/i099501fd4b4159f5.jpg",
+      "kind": "image",
+      "bytes": 96465,
+      "sha256": "ea5e87078da5bbbbe048782ec1151754b6ea81757d880d1d88825eaad71f30cd"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i1e996a361006f943/version/1669730055/image.jpg",
+      "local": "/images/i1e996a361006f943.jpg",
+      "kind": "image",
+      "bytes": 117111,
+      "sha256": "8cf8a1d0760fd0fbb2c3c59ebb472d77c7c4a5f554d4b7d98bab747358857636"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i773b030b43a85315/version/1669730055/image.jpg",
+      "local": "/images/i773b030b43a85315.jpg",
+      "kind": "image",
+      "bytes": 97362,
+      "sha256": "e21c6bc0556e60ffffdc09600f38ec9b8d96a7652f84d333d3121c51d2c899e0"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i5c36e558aec52176/version/1669730055/image.jpg",
+      "local": "/images/i5c36e558aec52176.jpg",
+      "kind": "image",
+      "bytes": 87296,
+      "sha256": "3b5d1a376198b037a454c5a0e202c6bd4e93c4e23e1ea4bafd8fd2553c975418"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/if1ca0a48ea35ed71/version/1669730055/image.jpg",
+      "local": "/images/if1ca0a48ea35ed71.jpg",
+      "kind": "image",
+      "bytes": 46914,
+      "sha256": "d52bbc0c48b90d2c48ea05aaae8f63aaed300f30249c4b104d4e9e29fbd9a02f"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i3c1f71521be07a01/version/1669730055/image.jpg",
+      "local": "/images/i3c1f71521be07a01.jpg",
+      "kind": "image",
+      "bytes": 8398,
+      "sha256": "6be844ba267d73ef750425a087453cef0c262ff376a08da678b4798c991c8a74"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/if981d3582abe757d/version/1669730055/image.jpg",
+      "local": "/images/if981d3582abe757d.jpg",
+      "kind": "image",
+      "bytes": 63692,
+      "sha256": "4136bd7d19b164c3cd442f7a12a0ebe83f7ab5379b79e9522a65331cac71fe00"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/ie4f59c1b64dc074d/version/1669730156/image.jpg",
+      "local": "/images/ie4f59c1b64dc074d.jpg",
+      "kind": "image",
+      "bytes": 94087,
+      "sha256": "286181ca1425884be5db9ab0ee0e2a2ee9b167a470db839f239e54d4a1399172"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/ib8b74ec73ac2daa0/version/1669730156/image.jpg",
+      "local": "/images/ib8b74ec73ac2daa0.jpg",
+      "kind": "image",
+      "bytes": 103090,
+      "sha256": "602ad5bbc7b206c4c4c0b98a1de2f481b9024a62c352acbfbd87a4069bc4cdf9"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i97a254c1ed23024a/version/1522251876/image.jpg",
+      "local": "/images/i97a254c1ed23024a.jpg",
+      "kind": "image",
+      "bytes": 101790,
+      "sha256": "df095b4607ff6a1866a7c04bd6dabd5ffd65076a1953b1a2425448b374b6c0c0"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/idfe72728de6a9d8a/version/1522251876/image.jpg",
+      "local": "/images/idfe72728de6a9d8a.jpg",
+      "kind": "image",
+      "bytes": 83875,
+      "sha256": "189f4ee1eeeedd063f1e6c3a8c6b5aeb18ae363b7fda10246d3583b5e6df44b4"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i69b23818277c23ff/version/1522251876/image.jpg",
+      "local": "/images/i69b23818277c23ff.jpg",
+      "kind": "image",
+      "bytes": 58455,
+      "sha256": "628da583ec45481b7a5e29075105e15f90a16c72a55526d2e941665ba4696bb4"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i49c19c298d4675c3/version/1522251876/image.jpg",
+      "local": "/images/i49c19c298d4675c3.jpg",
+      "kind": "image",
+      "bytes": 93816,
+      "sha256": "480b76b0cb8470780458b4013194f22be2ff39b5185474626236ee8390bed5b1"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/id24ce1e22aee00c3/version/1522251876/image.jpg",
+      "local": "/images/id24ce1e22aee00c3.jpg",
+      "kind": "image",
+      "bytes": 84630,
+      "sha256": "3d174ddc6971bdbcda7fd21aeddbc0f3074f8e0de7ce91f4298f4d7b7198cde0"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i8610ecbe09faea77/version/1522413248/image.jpg",
+      "local": "/images/i8610ecbe09faea77.jpg",
+      "kind": "image",
+      "bytes": 51065,
+      "sha256": "897ba186fc7d4bcfb8e28992378e1d3100181396de5c6e305c5b6aa7570fb08b"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/ie0b3943952eac32e/version/1522412857/image.jpg",
+      "local": "/images/ie0b3943952eac32e.jpg",
+      "kind": "image",
+      "bytes": 101960,
+      "sha256": "a48962830e78b15d828b4712878fbc946e9b7574fe26bc1456c02612ef50d12c"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i19bd8a37d179003a/version/1522412857/image.jpg",
+      "local": "/images/i19bd8a37d179003a.jpg",
+      "kind": "image",
+      "bytes": 95606,
+      "sha256": "b7d0ef8a4ed24f7b9620e63751ad987e78a9d04ef16e82ecd43891ba12b04002"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/ib0b5c9b157d92f5d/version/1522412857/image.jpg",
+      "local": "/images/ib0b5c9b157d92f5d.jpg",
+      "kind": "image",
+      "bytes": 57051,
+      "sha256": "c7c0db168371329f37ef7d24d68431e38e2e3fd0d55ded7d0e7e6803d4de3191"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/ib6fe5e4d2c3f1d10/version/1522412857/image.jpg",
+      "local": "/images/ib6fe5e4d2c3f1d10.jpg",
+      "kind": "image",
+      "bytes": 49468,
+      "sha256": "0b549c1017fe262feb0e816663698befa24b68dfaf9b0085f42730bc59d04041"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i1821804f47cbb8b9/version/1522412857/image.jpg",
+      "local": "/images/i1821804f47cbb8b9.jpg",
+      "kind": "image",
+      "bytes": 58240,
+      "sha256": "21e38bd34ee107f1f33a7650980c75469a1784c5a08a912d192688de504f08eb"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i05e11dfe9e4b5957/version/1522412857/image.jpg",
+      "local": "/images/i05e11dfe9e4b5957.jpg",
+      "kind": "image",
+      "bytes": 130815,
+      "sha256": "ebb3bfb018909abef57effeaad7d4f6943f3ab63d10c39e264dd295df7b38d72"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i90747fe57b8d3ae4/version/1522412857/image.jpg",
+      "local": "/images/i90747fe57b8d3ae4.jpg",
+      "kind": "image",
+      "bytes": 148335,
+      "sha256": "1c3f7e88347aba58626fc89596ccda5dcb32b30c98c35d83dc623161cb4cfdda"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i0a0e769ba62de735/version/1522073209/image.jpg",
+      "local": "/images/i757e1fc5319f5049.jpg",
+      "kind": "image",
+      "bytes": 4397,
+      "sha256": "6b8064581c63f1a8cf704679d2ac277d578f83a8e023ded187dca10442dcde95"
+    },
+    {
+      "source": "https://www.pirogue2000.fr/app/download/10420540386/CR-+AG++Pirogue+2000+du+31-01-2026.pdf?t=1771343261",
+      "local": "/documents/compte-rendu-ag-2026-01-31.pdf",
+      "kind": "document",
+      "bytes": 229208,
+      "sha256": "af171758f03dd5650bd1bb4385eabe7f812706a67ff8517390bc5427f765e9bf"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/image/i757e1fc5319f5049/version/1522056109/image.jpg",
+      "local": "/images/i757e1fc5319f5049.jpg",
+      "kind": "image",
+      "bytes": 4397,
+      "sha256": "6b8064581c63f1a8cf704679d2ac277d578f83a8e023ded187dca10442dcde95"
+    },
+    {
+      "source": "https://image.jimcdn.com/app/cms/image/transf/none/path/s0cac10e876baf480/backgroundarea/i4a384fe736f1096f/version/1522052299/image.png",
+      "local": "/images/background.png",
+      "kind": "background",
+      "bytes": 1025868,
+      "sha256": "b767a3fda29bfcbc8f6aaf150bac85752cb5c1f4eb43d669be42e37a26e0744b"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/archivoblack/ArchivoBlack-Regular.ttf",
+      "local": "/fonts/ArchivoBlack-Regular.ttf",
+      "kind": "font",
+      "bytes": 90988,
+      "sha256": "dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/archivoblack/OFL.txt",
+      "local": "/fonts/archivoblack-OFL.txt",
+      "kind": "license",
+      "bytes": 4492,
+      "sha256": "3173acd82f8c6159b5b1037b539fcbd4edff68e65c2ea8b9412b5a5ca97b08ff"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/imprima/Imprima-Regular.ttf",
+      "local": "/fonts/Imprima-Regular.ttf",
+      "kind": "font",
+      "bytes": 55692,
+      "sha256": "c563e40bc5609b8c7bcc39f93cba05455c0d0b8c43460ff991d2834301609c08"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/imprima/OFL.txt",
+      "local": "/fonts/imprima-OFL.txt",
+      "kind": "license",
+      "bytes": 4511,
+      "sha256": "6afcd25837be87e7c564f594d20ee009b4bfa540c4eb2d274992e2b1483fa3c9"
+    }
+  ],
+  "logo": "/images/i757e1fc5319f5049.jpg",
+  "auxiliary": [
+    {
+      "source_route": "/about/",
+      "route": "/about/",
+      "content": "content/about.md",
+      "treatment": "Association information and legal details to validate; Jimdo promotion removed."
+    },
+    {
+      "source_route": "/sitemap/",
+      "route": "/sitemap/",
+      "content": "content/sitemap.md",
+      "treatment": "Markdown site map."
+    },
+    {
+      "source_route": "/j/privacy",
+      "route": "/j/privacy/",
+      "content": "content/j/privacy.md",
+      "treatment": "Static privacy notice to validate; legacy path redirects to directory."
+    },
+    {
+      "source_route": "/j/legal-guarantee",
+      "route": "/j/legal-guarantee/",
+      "content": "content/j/legal-guarantee.md",
+      "treatment": "Static applicability notice; legacy path redirects to directory."
+    },
+    {
+      "source_route": "/j/withdrawal",
+      "route": "/j/withdrawal/",
+      "content": "content/j/withdrawal.md",
+      "treatment": "Static notice and email, no form; legacy path redirects to directory."
+    }
+  ]
+}
