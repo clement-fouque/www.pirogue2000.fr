@@ -1,8 +1,0 @@
-{{- $url := . -}}
-{{- if and (strings.HasPrefix $url "/") (not (strings.HasPrefix $url "//")) -}}
-  {{- $prefix := printf "%s/" (strings.TrimSuffix "/" (urls.Parse site.BaseURL).Path) -}}
-  {{- if not (or (strings.HasPrefix $url $prefix) (eq $url (strings.TrimSuffix "/" $prefix))) -}}
-    {{- $url = strings.TrimPrefix "/" $url | relURL -}}
-  {{- end -}}
-{{- end -}}
-{{- return $url -}}

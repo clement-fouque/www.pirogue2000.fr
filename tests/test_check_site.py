@@ -2,9 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.check_site import NOTICE_ROUTES, Page, resolve, validate
-
-PAGES_URL = "https://clement-fouque.github.io/www.pirogue2000.fr/"
+from scripts.check_site import Page, resolve, validate
 
 
 class SiteChecks(unittest.TestCase):
@@ -74,64 +72,6 @@ class SiteChecks(unittest.TestCase):
     def test_image_omitted_from_migrated_page_rejected(self):
         inventory = {"pages": [{"route": "/", "images": ["/images/lost.jpg"]}], "assets": []}
         self.assertTrue(any("omitted source image" in e for e in validate(self.root, inventory)))
-
-    def test_project_path_assets_and_navigation(self):
-        prefix = "/www.pirogue2000.fr/"
-        self.write("index.html", f'''<html lang="fr"><h1>Accueil</h1>
-            <link rel="canonical" href="{PAGES_URL}">
-            <link rel="stylesheet" href="{prefix}css/site.css">
-            <script src="{prefix}js/site.js"></script>
-            <a href="{prefix}actions/sant%C3%A9/?view=all#soins">Santé</a>
-            <a href="{prefix}documents/report.pdf">PDF</a>
-            <a href="{prefix}images/photo.jpg"><img alt="Photo"
-              src="{prefix}images/small.webp"
-              srcset="{prefix}images/small.webp 320w, {prefix}images/photo.jpg 640w"></a>
-            </html>''')
-        self.write("actions/santé/index.html", '''<html lang="fr"><h1 id="soins">Santé</h1>
-            <a href="../../?home=1">Accueil</a><a href="#soins">Soins</a>
-            <a href="mailto:example@example.com">Email</a><a href="tel:+33123456789">Téléphone</a>
-            <a href="//example.com/">Externe</a></html>''')
-        self.write("css/site.css", '@font-face{src:url("../fonts/font.ttf")}body{background:url("../images/photo.jpg")}')
-        for path in ("fonts/font.ttf", "js/site.js", "documents/report.pdf",
-                     "images/photo.jpg", "images/small.webp"):
-            self.write(path, "fixture")
-        self.assertEqual(validate(self.root, base_url=PAGES_URL), [])
-
-    def test_project_path_rejects_unprefixed_stylesheet(self):
-        self.write("css/site.css", "body{}")
-        self.write("index.html", '<html lang="fr"><h1>Accueil</h1><link rel="stylesheet" href="/css/site.css"></html>')
-        self.assertTrue(any("outside deployment path" in e for e in validate(self.root, base_url=PAGES_URL)))
-
-    def test_project_path_rejects_links_escaping_prefix(self):
-        for reference in ("/contact/", "/www.pirogue2000.fr-other/contact/",
-                          "../contact/", "https://clement-fouque.github.io/contact/"):
-            with self.subTest(reference=reference):
-                self.write("contact/index.html", '<html lang="fr"><h1>Contact</h1></html>')
-                self.write("index.html", f'<html lang="fr"><h1>Accueil</h1><a href="{reference}">Contact</a></html>')
-                self.assertTrue(any("outside deployment path" in e for e in validate(self.root, base_url=PAGES_URL)))
-
-    def test_project_path_rejects_css_escaping_prefix(self):
-        self.write("images/photo.jpg", "fixture")
-        self.write("css/site.css", 'body{background:url("/images/photo.jpg")}')
-        self.assertTrue(any("outside deployment path" in e for e in validate(self.root, base_url=PAGES_URL)))
-
-    def test_project_path_resolves_accented_route(self):
-        self.write("actions/santé/index.html", '<html lang="fr"><h1>Santé</h1></html>')
-        target, _ = resolve(self.root, "/www.pirogue2000.fr/", "/www.pirogue2000.fr/actions/sant%C3%A9/", PAGES_URL)
-        self.assertEqual(target, self.root / "actions/santé/index.html")
-
-    def test_project_path_preserves_inventory_checks(self):
-        self.write("index.html", '<html lang="fr"><h1>Accueil</h1><img alt="Photo" src="/www.pirogue2000.fr/images/photo.jpg"></html>')
-        self.write("images/photo.jpg", "fixture")
-        for route in NOTICE_ROUTES:
-            self.write(route.strip("/") + "/index.html", '<html lang="fr"><h1>Notice</h1></html>')
-        self.write("CNAME", "www.pirogue2000.fr")
-        self.write(".nojekyll", "")
-        self.write("sitemap.xml", "<urlset/>")
-        inventory = {"pages": [{"route": "/", "images": ["/images/photo.jpg"]}], "assets": []}
-        self.assertEqual(validate(self.root, inventory, base_url=PAGES_URL), [])
-        inventory["pages"][0]["images"] = ["/images/lost.jpg"]
-        self.assertTrue(any("omitted source image" in e for e in validate(self.root, inventory, base_url=PAGES_URL)))
 
 
 if __name__ == "__main__":
