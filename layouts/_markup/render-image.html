@@ -1,14 +1,14 @@
-{{- $src := .Destination -}}
+{{- $src := partial "local-url.html" .Destination -}}
 {{- $alt := .PlainText -}}
 {{- $dimensions := false -}}
 {{- $preview := $src -}}
 {{- $srcset := slice -}}
-{{- if and (strings.HasPrefix $src "/") (not (strings.HasPrefix $src "//")) -}}
-  {{- $path := printf "static%s" $src -}}
+{{- if and (strings.HasPrefix .Destination "/") (not (strings.HasPrefix .Destination "//")) -}}
+  {{- $path := printf "static%s" .Destination -}}
   {{- if os.FileExists $path -}}
     {{- $dimensions = imageConfig $path -}}
   {{- end -}}
-  {{- with resources.Get (strings.TrimPrefix "/" $src) -}}
+  {{- with resources.Get (strings.TrimPrefix "/" .Destination) -}}
     {{- $image := . -}}
     {{- if gt .Width 640 -}}
       {{- $preview = (.Resize "640x webp q82").RelPermalink -}}
