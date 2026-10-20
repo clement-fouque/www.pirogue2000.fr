@@ -63,13 +63,13 @@ Les galeries utilisent des commandes explicites, le défilement tactile et les f
 
 Les trois boutons de partage Facebook identiques de l’ancien pied de page sont remplacés par un accès à la page de l’association et un lien de partage, sans widget. Connexion, publicité Jimdo, contrôles cookies, formulaires et scripts de plateforme ont été retirés. Aucun suivi n’a été ajouté. Les licences des deux polices sont conservées avec leurs fichiers.
 
-## Contrôles et limites de publication
+## Build et limites de publication
 
-La construction Hugo est épinglée à `0.168.0`. Le contrôle `python3 scripts/check_site.py` vérifie les quatorze routes, les liens et ancres internes, les ressources HTML/CSS locales, les originaux et leurs empreintes, le PDF, le domaine préparé et l’absence de formulaires ou de dépendances runtime Jimdo. Les tests de ce contrôle utilisent uniquement la bibliothèque standard Python. La comparaison du texte source avec la sortie a également confirmé la conservation des dix-sept modules de texte éditorial des neuf pages de contenu, hors formulaires de plateforme remplacés.
+La construction Hugo est épinglée à `0.168.0`. La comparaison du texte source avec la sortie a également confirmé la conservation des dix-sept modules de texte éditorial des neuf pages de contenu, hors formulaires de plateforme remplacés.
 
-Une vérification locale dans Chromium couvre les quatorze routes aux largeurs 1440, 390 et 320 pixels, les chargements d’images, les galeries, l’agrandissement et le retour du focus, la navigation mobile, les liens d’images, le fonctionnement sans JavaScript et les anciens chemins techniques. Les captures de comparaison sont des artefacts de session, pas des fichiers publiés. Aucun service externe n’est nécessaire pour afficher le site.
+Lors de la migration, une vérification locale dans Chromium a couvert les quatorze routes aux largeurs 1440, 390 et 320 pixels, les chargements d’images, les galeries, l’agrandissement et le retour du focus, la navigation mobile, les liens d’images, le fonctionnement sans JavaScript et les anciens chemins techniques. Les captures de comparaison sont des artefacts de session, pas des fichiers publiés. Aucun service externe n’est nécessaire pour afficher le site.
 
-Le workflow suit le modèle de `clement-fouque/choisypourtous.fr`, avec installation et contrôle de l’archive Hugo, construction et contrôles avant le téléversement de `public/`, puis déploiement dans un job dépendant utilisant l’environnement `github-pages`. Les échecs du build ou de ses contrôles ne lancent pas ce job. La concurrence est sérialisée sans interruption d’un déploiement en cours.
+Le workflow installe Hugo à la version épinglée, vérifie son archive, construit le site avant le téléversement de `public/`, puis déploie dans un job dépendant utilisant l’environnement `github-pages`. Un échec du build ne lance pas ce job. La concurrence est sérialisée sans interruption d’un déploiement en cours.
 
 **Aucun déploiement GitHub réel n’est attesté par cette migration locale.** L’activation de GitHub Pages, les permissions effectives et la publication sur `main` restent à vérifier dans GitHub une fois les changements intégrés. Les commandes locales ne prouvent pas à elles seules le comportement de l’environnement distant.
 
