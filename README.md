@@ -8,7 +8,7 @@ Site de l’association Pirogue 2000, construit avec **Hugo 0.168.0** et destin�
 2. Modifier le texte sous le bloc initial délimité par `---`. Conserver le champ `url` : il maintient les adresses existantes, notamment leurs accents et leurs barres finales. Le champ `title` fournit le titre de la page.
 3. Enregistrer la modification avec **Commit changes**, directement sur `main` si vous en avez le droit, ou dans une branche puis une pull request.
 
-Une modification arrivée sur `main` déclenche la construction et, si tous les contrôles réussissent, la publication. Il n’y a pas de prévisualisation éditoriale dédiée. Un échec de construction empêche le déploiement : la dernière version publiée reste en ligne.
+Une modification arrivée sur `main` déclenche la construction puis la publication. Il n’y a pas de prévisualisation éditoriale dédiée. Un échec de construction empêche le déploiement : la dernière version publiée reste en ligne.
 
 Le calendrier est simplement `content/calendrier.md` : modifier son titre, son année et ses dates à la main. Rien ne recalcule automatiquement les événements.
 
@@ -50,15 +50,13 @@ Ne pas préfixer les liens publics par `static/`.
 
 ## Construire en local
 
-Installer la version Hugo indiquée dans [`.hugo-version`](.hugo-version), depuis les [versions officielles Hugo](https://github.com/gohugoio/hugo/releases/tag/v0.168.0). Python 3.9 ou ultérieur suffit aux contrôles ; aucun paquet Python ni outil Node n’est requis.
+Installer la version Hugo indiquée dans [`.hugo-version`](.hugo-version), depuis les [versions officielles Hugo](https://github.com/gohugoio/hugo/releases/tag/v0.168.0).
 
 Depuis la racine du dépôt :
 
 ```sh
 hugo version
 hugo --gc --minify --cleanDestinationDir --panicOnWarning
-python3 -m unittest discover -s tests
-python3 scripts/check_site.py
 ```
 
 La sortie est dans `public/`, exclu du suivi Git. `--cleanDestinationDir` nettoie **ce répertoire de sortie** pour ne pas conserver d’anciennes pages. Ne pas choisir un répertoire contenant vos propres fichiers comme destination de build.
@@ -71,11 +69,11 @@ hugo server
 
 Les templates sont dans `layouts/`, le CSS dans `static/css/site.css` et le JavaScript dans `static/js/site.js`. Les polices sont locales et leurs licences sont dans `static/fonts/`.
 
-Le contrôle vérifie les routes migrées, les liens et ancres internes, les images, les PDF, l’absence de dépendances Jimdo et de ressources distantes chargées à l’exécution. Le manifeste `docs/source-inventory.json` est une référence de migration, **pas une base de contenu à mettre à jour à chaque ajout**. Conserver les médias historiques référencés ; si un retrait délibéré est nécessaire, adapter le manifeste dans la même modification, en expliquant pourquoi.
+Le manifeste `docs/source-inventory.json` est une référence de migration, **pas une base de contenu à mettre à jour à chaque ajout**. Conserver les médias historiques référencés ; si un retrait délibéré est nécessaire, adapter le manifeste dans la même modification, en expliquant pourquoi.
 
 ## Préparer GitHub Pages
 
-Le workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) installe Hugo à la version épinglée, vérifie son archive, construit le site, exécute les contrôles, puis téléverse uniquement `public/`. Le job `deploy`, dépendant du succès du job `build`, utilise l’environnement `github-pages`. Une exécution manuelle sur une branche autre que `main` ne publie pas.
+Le workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) installe Hugo à la version épinglée, vérifie son archive, construit le site, puis téléverse uniquement `public/`. Le job `deploy`, dépendant du succès du job `build`, utilise l’environnement `github-pages`. Une exécution manuelle sur une branche autre que `main` ne publie pas.
 
 Le propriétaire du dépôt doit configurer **Settings → Pages → Build and deployment → Source: GitHub Actions**, ainsi que les éventuelles autorisations de l’environnement `github-pages`. Le workflow doit pouvoir disposer de `contents: read`, `pages: write` et `id-token: write`.
 
