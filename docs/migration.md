@@ -47,7 +47,7 @@ Les galeries du HTML initial exposaient l’ensemble de leurs images et leurs ci
 
 **Adresse postale incohérente dans la source.** Contact indique `45560 Saint Jean Le Blanc`, tandis que le pied de page indique `45650 St Jean Le Blanc`. Les deux valeurs sont conservées à leurs emplacements ; l’association doit confirmer la bonne valeur avant une correction.
 
-**Bulletin d’adhésion absent.** Contact annonçait « le lien suivant » sans lien ni document associé. Le seul téléchargement public découvert est le compte-rendu PDF. Le texte historique est conservé et accompagné d’une indication pour demander le bulletin par email ; aucun formulaire ou document d’adhésion n’a été inventé.
+**Bulletin d’adhésion.** Lors de la migration, Contact annonçait « le lien suivant » sans lien ni document associé ; le seul téléchargement public découvert était le compte-rendu PDF. Un bulletin fourni ultérieurement est désormais disponible sur la page Contact.
 
 **Calendrier.** L’entrée Vélotour est datée simplement `05` dans la source. Elle est conservée telle quelle, comme toutes les autres dates. Il revient aux rédacteurs de clarifier cette date et d’actualiser manuellement le calendrier.
 
