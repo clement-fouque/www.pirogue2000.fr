@@ -9,11 +9,11 @@ les conditions de vie de la population nigérienne.**
 
 **En prenant part au travail de Pirogue 2000, vous contribuerez notamment à apporter aux villageois un accès aux soins, à l'eau potable et à l'autosuffisance alimentaire.**
 
-1. Votre adhésion vous permettra d'avoir accès au détail et au suivi de tous nos projets. Pour cela, il suffit d'imprimer le document via le lien suivant :
+1. Votre adhésion vous permettra d'avoir accès au détail et au suivi de tous nos projets. Pour cela, imprimez le bulletin :
 
-   Le lien vers le bulletin d’adhésion n’était pas disponible sur le site. Pour obtenir ce document, écrivez à [pirogue2000@yahoo.fr](mailto:pirogue2000@yahoo.fr).
+   [Télécharger le bulletin de don et d’adhésion (PDF)](/documents/bulletin-adhesion-pirogue-2000.pdf)
 
-2. le remplir et l'envoyer, accompagné du règlement correspondant, à l'adresse suivante :
+2. Remplissez-le et envoyez-le, accompagné du règlement correspondant, à l’adresse indiquée sur le bulletin.
 
 ![Logo de l’association Pirogue 2000](/images/i757e1fc5319f5049.jpg)
 
